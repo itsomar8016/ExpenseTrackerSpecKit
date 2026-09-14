@@ -8,6 +8,12 @@
 
 **Input**: User description: "Build a simple personal Expense Tracker application for a single local user."
 
+## Clarifications
+
+### Session 2026-09-14
+
+- Q: Which currency should the expense tracker use for amounts? → A: Use one fixed currency: INR (₹).
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Record an Expense (Priority: P1)
@@ -99,7 +105,8 @@ filters, and verify that the displayed list and totals update correctly.
 - **FR-001**: The application MUST support one local user without requiring authentication.
 - **FR-002**: The application MUST allow the user to create an expense with an amount, category,
   description, and date.
-- **FR-003**: The application MUST require a positive numeric amount greater than zero.
+- **FR-003**: The application MUST require a positive numeric amount greater than zero and MUST
+  display and calculate amounts in fixed Indian rupees (INR, ₹).
 - **FR-004**: The application MUST require a category and date for every expense.
 - **FR-005**: The application MUST validate external expense input before saving or updating it and
   MUST provide clear feedback for missing or invalid values.
@@ -112,8 +119,8 @@ filters, and verify that the displayed list and totals update correctly.
 - **FR-010**: The application MUST allow the user to filter displayed expenses by category.
 - **FR-011**: The application MUST allow the user to filter displayed expenses by a selected date
   or inclusive date range.
-- **FR-012**: The application MUST calculate the total amount and expense count from the currently
-  displayed or filtered expenses.
+- **FR-012**: The application MUST calculate the total amount in INR (₹) and expense count from the
+  currently displayed or filtered expenses.
 - **FR-013**: The application MUST provide useful summary information for the current expense view,
   including total expenses and number of expenses.
 - **FR-014**: The application MUST provide clear success feedback after successful create, update,
@@ -165,6 +172,8 @@ filters, and verify that the displayed list and totals update correctly.
   not state that it is required; when provided, it is stored and displayed as entered after normal
   whitespace handling.
 - Expense dates use a calendar date selected by the user, without time-of-day requirements.
+- All expenses use a single fixed currency: Indian rupees (INR, ₹); currency conversion and
+  multi-currency records are outside the initial version.
 - Category values are user-selectable labels; the initial version does not require category
   management beyond selecting or entering a category for an expense.
 - The application has access to local persistent storage during normal operation.
